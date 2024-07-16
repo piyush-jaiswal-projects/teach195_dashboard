@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:teach195/domain/models/teacher.dart';
 import 'package:teach195/presentation/widgets/StatusButton.dart';
 
@@ -12,45 +13,50 @@ class TeacherCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 1376,
-      height: 88,
-      padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
-      margin: const EdgeInsets.fromLTRB(0, 8, 0, 8),
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: const Color(0xffF3C138),
-          width: 1.0,
+    return GestureDetector(
+      onTap: () {
+        Get.toNamed("/timesheet?id=${teacher.id}&name=${teacher.name}");
+      },
+      child: Container(
+        width: 1376,
+        height: 88,
+        padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
+        margin: const EdgeInsets.fromLTRB(0, 8, 0, 8),
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: const Color(0xffF3C138),
+            width: 1.0,
+          ),
+          borderRadius: BorderRadius.circular(8.0),
+          color: const Color(0xffFFFAF0),
         ),
-        borderRadius: BorderRadius.circular(8.0),
-        color: const Color(0xffFFFAF0),
-      ),
-      child: Row(
-        children: [
-          Container(
-            width: 320,
-            child: Row(
-              children: [
-                circularDp(), // profile image
-                SizedBox(width: 16),
-                teacherInfo()
-              ],
+        child: Row(
+          children: [
+            Container(
+              width: 320,
+              child: Row(
+                children: [
+                  circularDp(), // profile image
+                  SizedBox(width: 16),
+                  teacherInfo()
+                ],
+              ),
             ),
-          ),
-          Container(
-            width: 1000,
-            margin: const EdgeInsets.only(left: 16),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                agencyName(),
-                subject(),
-                rating(),
-                StatusButton(status: teacher.status)
-              ],
+            Container(
+              width: 1000,
+              margin: const EdgeInsets.only(left: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  agencyName(),
+                  subject(),
+                  rating(),
+                  StatusButton(status: teacher.status)
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -198,7 +204,7 @@ class TeacherCard extends StatelessWidget {
           height: 24,
           margin: const EdgeInsets.only(left: 5),
           child: Text(
-            teacher.age.toString() + "y",
+            teacher.age.toString() + "yr",
             style: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
