@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:teach195/presentation/components/details.dart';
+import 'package:teach195/presentation/components/sidepanel.dart';
+import 'package:teach195/presentation/widgets/BreadCrumb.dart';
 import 'package:teach195/presentation/widgets/TopBar.dart';
 import 'package:get/get.dart';
 
@@ -13,11 +16,18 @@ class TimeSheetPage extends StatelessWidget {
       appBar: TopBar(context),
       body: SingleChildScrollView(
         child: Container(
-          padding: const EdgeInsets.all(16),
           child: Column(
             children: [
-              Text("Timesheet Page"),
-              Text("Hello ${params["name"]}!, Your id is: ${params["id"]}")
+              BreadCrumb(title: params["name"] ?? ""),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Sidepanel(activeTeacher: params["name"] ?? "", activeId: params["id"] ?? "BookingId"),
+                  Details(activeTeacher: params["name"] ?? "", activeId: params["id"] ?? "BookingId"),
+                  SizedBox(width: 14,)
+                ],
+              )
             ],
           ),
         ),

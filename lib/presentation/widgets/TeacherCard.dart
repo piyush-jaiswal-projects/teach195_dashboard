@@ -51,7 +51,7 @@ class TeacherCard extends StatelessWidget {
                   agencyName(),
                   subject(),
                   rating(),
-                  StatusButton(status: teacher.status)
+                  StatusButton(status: teacher.status, text: teacher.status,)
                 ],
               ),
             ),

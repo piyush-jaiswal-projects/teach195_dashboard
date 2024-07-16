@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class ToggleButton extends StatelessWidget {
   final String text;
-  const ToggleButton({Key? key, required this.text}) : super(key: key);
+  final String? size;
+  const ToggleButton({Key? key, required this.text, this.size}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class ToggleButton extends StatelessWidget {
           width: 150,
           height: 56,
           padding: const EdgeInsets.fromLTRB(24, 0, 24, 0),
-          margin: const EdgeInsets.symmetric(horizontal: 16),
+          margin: size == "small" ? const EdgeInsets.all(8) : const EdgeInsets.symmetric(horizontal: 16),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
             border: Border.all(
