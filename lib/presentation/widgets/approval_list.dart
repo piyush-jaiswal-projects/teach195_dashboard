@@ -35,28 +35,13 @@ class ApprovalList extends StatelessWidget {
                 fontWeight: FontWeight.w400,
                 fontFamily: 'Poppins'),
           ),
-          Row(
-            children: [
-              Container(
-                width: 8,
-                height: 8,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: item.noOfPending != 0 ? Colors.red : Colors.green,
-                ),
-              ),
-              const SizedBox(
-                width: 4,
-              ),
-              Text(
-                "${item.noOfPending != 0 ? item.noOfPending.toString() : ""} ${item.noOfPending == 0 ? "Approved" : "Pending"}",
-                style: const TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w400,
-                    fontFamily: 'Poppins'),
-              )
-            ],
-          )
+          Text(
+            item.id,
+            style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w400,
+                fontFamily: 'Poppins'),
+          ),
         ],
       ),
     );

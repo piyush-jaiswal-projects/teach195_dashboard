@@ -20,13 +20,6 @@ class CalendarBar extends StatelessWidget {
                     fontSize: 20,
                     color: Color(0xffA27A25),
                     fontFamily: 'Poppins'),
-              ),
-              SizedBox(
-                width: 8,
-              ),
-              StatusButton(
-                status: "Pending",
-                text: "PENDING",
               )
             ],
           ),
