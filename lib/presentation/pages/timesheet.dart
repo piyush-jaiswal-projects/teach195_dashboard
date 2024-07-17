@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:teach195/presentation/components/details.dart';
-import 'package:teach195/presentation/components/sidepanel.dart';
-import 'package:teach195/presentation/widgets/BreadCrumb.dart';
-import 'package:teach195/presentation/widgets/TopBar.dart';
+import 'package:teach195/presentation/components/user_timesheet.dart';
+import 'package:teach195/presentation/components/sidepanel_timesheet.dart';
+import 'package:teach195/presentation/widgets/breadcrumb.dart';
+import 'package:teach195/presentation/widgets/top_bar.dart';
 import 'package:get/get.dart';
 
 class TimeSheetPage extends StatelessWidget {
@@ -24,8 +24,8 @@ class TimeSheetPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Sidepanel(activeTeacher: params["name"] ?? "", activeId: params["id"] ?? "BookingId"),
-                  Details(activeTeacher: params["name"] ?? "", activeId: params["id"] ?? "BookingId"),
-                  SizedBox(width: 14,)
+                  UserTimesheet(activeTeacher: params["name"] ?? "", activeId: params["id"] ?? "BookingId"),
+                  const SizedBox(width: 14,)
                 ],
               )
             ],

@@ -1,10 +1,10 @@
-class ApprovalList {
+class TimesheetApproval {
   String teacherName;
   String id;
   int noOfApproval;
   int noOfPending;
 
-  ApprovalList({
+  TimesheetApproval({
     required this.teacherName,
     required this.id,
     required this.noOfApproval,

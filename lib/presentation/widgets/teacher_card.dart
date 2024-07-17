@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:teach195/domain/models/teacher.dart';
-import 'package:teach195/presentation/widgets/StatusButton.dart';
+import 'package:teach195/presentation/widgets/status_button.dart';
 
 class TeacherCard extends StatelessWidget {
   final Teacher teacher;
@@ -37,7 +37,7 @@ class TeacherCard extends StatelessWidget {
               child: Row(
                 children: [
                   circularDp(), // profile image
-                  SizedBox(width: 16),
+                  const SizedBox(width: 16),
                   teacherInfo()
                 ],
               ),

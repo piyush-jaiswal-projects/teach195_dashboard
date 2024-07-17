@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:teach195/data/datasources/local/teachers.dart';
-import 'package:teach195/presentation/widgets/TeacherCard.dart';
+import 'package:teach195/presentation/widgets/teacher_card.dart';
 
-class AllTeachers extends StatelessWidget {
-  const AllTeachers({super.key});
+class TeacherList extends StatelessWidget {
+  const TeacherList({super.key});
 
   @override
   Widget build(BuildContext context) {

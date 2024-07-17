@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:teach195/presentation/components/all.dart';
+import 'package:teach195/presentation/components/teacher_list.dart';
 import 'package:teach195/presentation/components/header.dart';
-import 'package:teach195/presentation/components/toprated.dart';
-import 'package:teach195/presentation/widgets/TopBar.dart';
+import 'package:teach195/presentation/components/top_teacher_list.dart';
+import 'package:teach195/presentation/widgets/top_bar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -16,9 +16,9 @@ class HomePage extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           child: Column(
         children: [
-          Header(),
-          TopRated(),
-          AllTeachers(),
+          const Header(),
+          TopTeacherList(),
+         const TeacherList(),
         ],
           ),
         ),

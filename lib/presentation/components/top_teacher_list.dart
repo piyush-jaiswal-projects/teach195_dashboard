@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:teach195/data/datasources/local/teachers.dart';
 import 'package:teach195/domain/models/teacher.dart';
-import 'package:teach195/presentation/widgets/TeacherCard.dart';
+import 'package:teach195/presentation/widgets/teacher_card.dart';
 
-class TopRated extends StatelessWidget {
-  TopRated({super.key});
+class TopTeacherList extends StatelessWidget {
+  TopTeacherList({super.key});
 
   final List<Teacher> topTeachers =
       teachers.where((teacher) => teacher.rating > 4.5).toList();
